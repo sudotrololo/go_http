@@ -13,6 +13,7 @@ func main() {
 	http.HandleFunc("/get_html", getHTMLHandler)
 	http.HandleFunc("/say_hello", sayHelloHandler)
 	http.HandleFunc("/say_current_time", sayCurrentTimeHandler)
+	http.HandleFunc("/get_info", getInfoHandler)
 
 	// Запускаем сервер на порту 9999
 	port := 9999
@@ -49,3 +50,22 @@ func sayCurrentTimeHandler(w http.ResponseWriter, r *http.Request) {
 	// Отправляем время в формате строки
 	fmt.Fprint(w, currentTime.Format("15:04:05"))
 }
+
+func getInfoHandler (w http.ResponseWriter, r *http.Request) {
+	// открываем фаил info.html
+	file, err := http.Dir(".").Open("info.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+		
+	}
+	defer file.Close()
+
+	// Копируем содержимое файла в ResponsWriter
+
+	_, err = io.Copy(w, file)
+	if  err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+} 
