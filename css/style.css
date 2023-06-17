@@ -1,0 +1,59 @@
+body{
+  background-color: midnightblue;
+
+}
+.container{
+    max-width: 1200px;
+  margin: 10px;
+
+}
+.header{
+background-image: url(images/tor.png);
+height: 500px;
+}
+.Dmitrii{
+   font-weight:bold ;
+   font-size: 15px;
+} 
+
+.img-canon{
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+    margin-bottom:  15px;
+    padding-left:  300px ;
+    width: 700px;
+    height: 300px;
+    
+}
+.tor{
+    width: 30px;
+    height: 30px;
+    position:absolute ;
+    margin-left: 410px;
+    object-fit:contain;
+}
+.hi{
+    font-family: 'Kablammo', cursive;
+    font-size: larger;
+    font-style: oblique;
+    text-align:center;
+}
+.first-text{
+    font-family: 'Inter', sans-serif;
+    margin-left: 140px;
+
+}
+label{
+    display: flex;
+
+} 
+.menu{
+    display: flex;
+    justify-content:space-evenly ;
+}
+.menu-item-list{
+    cursor: pointer;
+}
+a{
+    color: forestgreen;
+}
